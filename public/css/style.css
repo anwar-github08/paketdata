@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+@font-face {
+    font-family: "cc";
+    src: url("/font/cc.otf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* preloader */
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+/* navbar */
+nav {
+    margin-bottom: 800px;
+    background-color: rgb(228, 233, 247);
+    height: 80px;
+}
+nav .alias {
+    font-size: 20px;
+    color: rgb(87, 108, 163);
+}
+nav .nama {
+    color: rgb(119, 132, 165);
+}
+
+/* footer */
+footer {
+    background-color: rgb(228, 233, 247);
+    height: 30px;
+    font-size: 13px;
+}
+.footer-area {
+    padding-top: 6px;
+}
+
+.footer-area img {
+    width: 16px;
+}
+
+/* jarak */
+.jarak-atas {
+    margin-bottom: 100px;
+}
+.jarak-bawah {
+    margin-top: 60px;
+}
+
+/* loading */
+.loading img {
+    width: 40px;
+}
+
+/* card pada komponen menu */
+.card {
+    background-color: rgb(237, 241, 250);
+    color: rgb(87, 108, 163);
+    box-shadow: 0px 5px 15px rgb(164, 181, 226);
+}
+.card a {
+    color: rgb(87, 108, 163);
+    text-decoration: none;
+}
+.card .card-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.card .card-body img {
+    margin-bottom: 5px;
+}
+.card .active {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* seukuran hp */
+@media only screen and (max-width: 768px) {
+    /* naavbar */
+    nav {
+        height: 60px;
+    }
+    nav img {
+        width: 30px;
+    }
+    nav .medsos img {
+        width: 25px;
+    }
+    nav .alias {
+        font-size: 12px;
+    }
+    nav .nama {
+        font-size: 10px;
+    }
+
+    /* footer */
+    footer {
+        font-size: 10px;
+    }
+    .footer-area {
+        padding-top: 10px;
+    }
+    .footer-area img {
+        width: 14px;
+    }
+
+    /* jarak */
+    .jarak-atas {
+        margin-bottom: 70px;
+    }
+    .jarak-bawah {
+        margin-top: 45px;
+    }
+
+    /* loading */
+    .loading img {
+        width: 30px;
+    }
+
+    /* card pada komponen menu */
+    .card .card-header {
+        font-size: 11px;
+    }
+    .card .card-body {
+        font-size: 9px;
+    }
+    .card .card-body img {
+        width: 20px;
+    }
+}
