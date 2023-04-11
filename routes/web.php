@@ -23,6 +23,7 @@ Route::middleware('guest')->group(function () {
 
     // login
     Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'auth']);
 });
 
 // rute middleware auth->bisa diakses ketika sudah login
@@ -34,4 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/produk', function () {
         return view('admin.produk', ['title' => 'Admin | Produk']);
     });
+
+    // logout
+    Route::post('/logout', [LoginController::class, 'logout']);
 });

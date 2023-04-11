@@ -16,7 +16,11 @@
             </div>
         </div>
         <div>
-            <span><a href="/admin"><img src="/img/admin.png" alt="admin" width="40"></a></span>
+            @auth
+                <span><a href="/admin"><img src="/img/boy.png" alt="admin" width="40"></a></span>
+            @else
+                <span><a href="/admin"><img src="/img/admin.png" alt="admin" width="40"></a></span>
+            @endauth
         </div>
     </div>
 </nav>
