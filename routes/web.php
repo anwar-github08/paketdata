@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+});
+
+// rute middleware guest->bisa diakses ketika belum login
+Route::middleware('guest')->group(function () {
+
+    // login
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+});
+
+// rute middleware auth->bisa diakses ketika sudah login
+Route::middleware('auth')->group(function () {
+    // untuk admin
+    Route::get('/admin', function () {
+        return view('admin.dashboard', ['title' => 'Admin | Dashboard']);
+    });
+    Route::get('/produk', function () {
+        return view('admin.produk', ['title' => 'Admin | Produk']);
+    });
 });

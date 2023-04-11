@@ -72,7 +72,7 @@ footer {
     width: 40px;
 }
 
-/* card pada komponen menu */
+/* card */
 .card {
     background-color: rgb(237, 241, 250);
     color: rgb(87, 108, 163);
@@ -80,21 +80,48 @@ footer {
 }
 .card a {
     color: rgb(87, 108, 163);
-    text-decoration: none;
 }
-.card .card-body {
+
+/* card pada komponen menu */
+.card-menu .card-body {
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
 }
-.card .card-body img {
+.card-menu .card-body img {
     margin-bottom: 5px;
 }
-.card .active {
+.card-menu .active {
     font-style: italic;
     font-weight: bold;
     text-decoration: underline;
+}
+.card-menu a {
+    text-decoration: none;
+}
+
+/* komponen produk */
+.card-produk .item {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-produk .item a {
+    margin-left: 15px;
+    text-align: center;
+    line-height: 50px;
+    color: rgb(87, 108, 163);
+}
+.card-produk .item .active {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: solid 1px rgb(87, 108, 163);
+    padding: 0 4px;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 10%;
+}
+.card-produk .item img {
+    width: 20px;
 }
 
 /* seukuran hp */
@@ -140,14 +167,24 @@ footer {
         width: 30px;
     }
 
-    /* card pada komponen menu */
+    /* card */
     .card .card-header {
-        font-size: 11px;
+        font-size: 10px;
     }
     .card .card-body {
         font-size: 9px;
     }
-    .card .card-body img {
+
+    /* card pada komponen menu */
+    .card-menu .card-body img {
         width: 20px;
+    }
+
+    /* card pada komponen produk */
+    .card-produk .item a {
+        line-height: 30px;
+    }
+    .card-produk .item img {
+        width: 12px;
     }
 }
