@@ -32,9 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', function () {
         return view('admin.dashboard', ['title' => 'Admin | Dashboard']);
     });
-    Route::get('/produk', function () {
-        return view('admin.produk', ['title' => 'Admin | Produk']);
-    });
 
     // logout
     Route::post('/logout', [LoginController::class, 'logout']);

@@ -65,6 +65,91 @@
                             </td>
                         </tr>
                     @endforeach
+                    @foreach ($produkBrands as $produk)
+                        <tr>
+                            <td>{{ $produk->nama_produk }}</td>
+                            <td><strong>{{ number_format($produk->harga) }}</strong></td>
+                            <td>
+                                @if ($produk->multi)
+                                    <img src="/img/multi.png" alt="multi_on">
+                                @else
+                                    <img src="/img/nomulti.png" alt="multi_off">
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#"
+                                    wire:click="$emit('eTransaksi','{{ $produk->nama_produk }}','{{ $produk->category }}','{{ $produk->price }}','{{ $produk->buyer_sku_code }}','{{ $produk->multi }}','{{ $produk->start_cut_off }}','{{ $produk->end_cut_off }}','{{ $produk->seller_product_status }}','{{ $produk->brand }}','{{ $produk->desc }}')">Proses</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    @foreach ($produkBrands as $produk)
+                        <tr>
+                            <td>{{ $produk->nama_produk }}</td>
+                            <td><strong>{{ number_format($produk->harga) }}</strong></td>
+                            <td>
+                                @if ($produk->multi)
+                                    <img src="/img/multi.png" alt="multi_on">
+                                @else
+                                    <img src="/img/nomulti.png" alt="multi_off">
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#"
+                                    wire:click="$emit('eTransaksi','{{ $produk->nama_produk }}','{{ $produk->category }}','{{ $produk->price }}','{{ $produk->buyer_sku_code }}','{{ $produk->multi }}','{{ $produk->start_cut_off }}','{{ $produk->end_cut_off }}','{{ $produk->seller_product_status }}','{{ $produk->brand }}','{{ $produk->desc }}')">Proses</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    @foreach ($produkBrands as $produk)
+                        <tr>
+                            <td>{{ $produk->nama_produk }}</td>
+                            <td><strong>{{ number_format($produk->harga) }}</strong></td>
+                            <td>
+                                @if ($produk->multi)
+                                    <img src="/img/multi.png" alt="multi_on">
+                                @else
+                                    <img src="/img/nomulti.png" alt="multi_off">
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#"
+                                    wire:click="$emit('eTransaksi','{{ $produk->nama_produk }}','{{ $produk->category }}','{{ $produk->price }}','{{ $produk->buyer_sku_code }}','{{ $produk->multi }}','{{ $produk->start_cut_off }}','{{ $produk->end_cut_off }}','{{ $produk->seller_product_status }}','{{ $produk->brand }}','{{ $produk->desc }}')">Proses</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    @foreach ($produkBrands as $produk)
+                        <tr>
+                            <td>{{ $produk->nama_produk }}</td>
+                            <td><strong>{{ number_format($produk->harga) }}</strong></td>
+                            <td>
+                                @if ($produk->multi)
+                                    <img src="/img/multi.png" alt="multi_on">
+                                @else
+                                    <img src="/img/nomulti.png" alt="multi_off">
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#"
+                                    wire:click="$emit('eTransaksi','{{ $produk->nama_produk }}','{{ $produk->category }}','{{ $produk->price }}','{{ $produk->buyer_sku_code }}','{{ $produk->multi }}','{{ $produk->start_cut_off }}','{{ $produk->end_cut_off }}','{{ $produk->seller_product_status }}','{{ $produk->brand }}','{{ $produk->desc }}')">Proses</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    @foreach ($produkBrands as $produk)
+                        <tr>
+                            <td>{{ $produk->nama_produk }}</td>
+                            <td><strong>{{ number_format($produk->harga) }}</strong></td>
+                            <td>
+                                @if ($produk->multi)
+                                    <img src="/img/multi.png" alt="multi_on">
+                                @else
+                                    <img src="/img/nomulti.png" alt="multi_off">
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#"
+                                    wire:click="$emit('eTransaksi','{{ $produk->nama_produk }}','{{ $produk->category }}','{{ $produk->price }}','{{ $produk->buyer_sku_code }}','{{ $produk->multi }}','{{ $produk->start_cut_off }}','{{ $produk->end_cut_off }}','{{ $produk->seller_product_status }}','{{ $produk->brand }}','{{ $produk->desc }}')">Proses</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
 

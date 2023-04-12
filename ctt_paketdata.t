@@ -9,3 +9,6 @@
 # buat halaman admin untuk mengelola produk 
 # buat login admin
 # proses login dan data user belum, baru tampilan dan routenya
+# kelola produk diadmin sudah clear
+# membuat kelola gambar bukti pembayaran !! migrasi tabel dan storage link
+menampilkan gambar di ashowpesanan

@@ -12,7 +12,7 @@
     @stack('style-source')
 
     <link rel="icon" type="image/png" href="/img/credit.png">
-    <title>{{ $title }}</title>
+    <title class="text-white">{{ $title }}</title>
     @livewireStyles
 </head>
 
@@ -49,7 +49,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div
                     class="d-flex justify-content-beetwen flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h2>{{ $title }}</h2>
+                    <h2 class="text-white">{{ $title }}</h2>
                 </div>
                 @yield('konten')
             </main>

@@ -36,6 +36,7 @@ nav {
     margin-bottom: 800px;
     background-color: rgb(228, 233, 247);
     height: 80px;
+    z-index: 3;
 }
 nav .alias {
     font-size: 20px;
@@ -83,6 +84,12 @@ footer {
 }
 
 /* card pada komponen menu */
+.card-menu {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
+    z-index: 2;
+}
 .card-menu .card-body {
     display: flex;
     justify-content: space-around;
@@ -176,6 +183,9 @@ footer {
     }
 
     /* card pada komponen menu */
+    .card-menu {
+        top: 60px;
+    }
     .card-menu .card-body img {
         width: 20px;
     }

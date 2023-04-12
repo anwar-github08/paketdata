@@ -5,10 +5,6 @@
                 <a class="nav-link {{ $title == 'Admin | Dashboard' ? 'text-primary' : '' }}" href="/admin">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ $title == 'Admin | Produk' ? 'text-primary' : '' }}" href="/produk">Produk</a>
-            </li>
-
-            <li class="nav-item">
                 <a class="nav-link" href="/" onclick="return confirm('ke halaman utama..?')">Home User</a>
             </li>
             <li class="nav-item">
