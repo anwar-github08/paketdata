@@ -9,6 +9,7 @@
         @livewire('admin.produk.aproduk-show-component')
     @elseif($pesanan)
         @livewire('admin.pesanan.apesanan-component')
+        @livewire('admin.pesanan.ashow-pesanan-component')
     @elseif($pembayaran)
         @livewire('admin.pembayaran.apembayaran-component')
     @endif

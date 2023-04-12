@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        User::create([
-            'name' => 'Khoirul Anwar',
-            'email' => 'playmakeranwar08@gmail.com',
-            'password' => Hash::make('anwardata08'),
-        ]);
+        // User::create([
+        //     'name' => 'Khoirul Anwar',
+        //     'email' => 'playmakeranwar08@gmail.com',
+        //     'password' => Hash::make('anwardata08'),
+        // ]);
 
         // Produk::create([
         //     'kategori' => 'PLN',

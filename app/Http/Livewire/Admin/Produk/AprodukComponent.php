@@ -56,6 +56,6 @@ class AprodukComponent extends Component
         $this->brand = '';
         $this->harga = '';
         $this->deskripsi = '';
-        $this->multi = true;
+        $this->multi = false;
     }
 }
