@@ -15,6 +15,14 @@ class AshowPesananComponent extends Component
         return view('livewire.admin.pesanan.ashow-pesanan-component');
     }
 
+    // menangkap emit dari userCreate dan emit dari self
+    protected $listeners = ['eTriggerUserShow', 'refresh' => '$refresh'];
+
+    public function eTriggerUserShow()
+    {
+        session()->flash('sukses', 'Data Tersimpan');
+    }
+
     public function deleteImage($id, $image)
     {
         unlink('storage/bukti_pesanan/' . $image);

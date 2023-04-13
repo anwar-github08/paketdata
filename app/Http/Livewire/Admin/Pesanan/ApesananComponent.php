@@ -32,7 +32,6 @@ class ApesananComponent extends Component
         // validasi
         $this->validate([
             'foto' => 'required|image',
-
         ]);
 
         // buat nama foto
@@ -44,6 +43,10 @@ class ApesananComponent extends Component
         BuktiPesanan::create([
             'image' => $imgName
         ]);
+
+        // buat emit untuk trigger user-show
+        $this->emit('eTriggerUserShow');
+        $this->dispatchBrowserEvent('triggerJs');
 
         $this->foto = null;
         // untuk reset form input file

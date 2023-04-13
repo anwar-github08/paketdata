@@ -10,31 +10,27 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Kategori</th>
-                <th>Brand</th>
-                <th>Produk</th>
-                <th>Kode Produk</th>
-                <th>Harga</th>
-                <th>Deskripsi</th>
-                <th>Multi</th>
+                <th>Merchant</th>
+                <th>A.N</th>
+                <th>No Rek</th>
+                <th>Image</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($produks as $produk)
+            @foreach ($pembayarans as $pembayaran)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $produk->kategori }}</td>
-                    <td>{{ $produk->brand }}</td>
-                    <td>{{ $produk->nama_produk }}</td>
-                    <td>{{ $produk->kode_produk }}</td>
-                    <td>{{ number_format($produk->harga) }}</td>
-                    <td>{{ $produk->deskripsi }}</td>
-                    <td>{{ $produk->multi }}</td>
+                    <td>{{ $pembayaran->merchant }}</td>
+                    <td>{{ $pembayaran->atas_nama }}</td>
+                    <td>{{ $pembayaran->no_rek }}</td>
+                    <td><img src="/storage/image_pembayaran/{{ $pembayaran->image_pembayaran }}" alt="image_pembayaran"
+                            width="40"></td>
                     <td><button class="btn btn-danger btn-sm"
                             onclick="return confirm('hapus..?') ||
                             event.stopImmediatePropagation()"
-                            wire:click="deleteProduk({{ $produk->id }})">Hapus</button></td>
+                            wire:click="deletePembayaran({{ $pembayaran->id }},'{{ $pembayaran->image_pembayaran }}')">Hapus</button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -23,6 +23,8 @@ class DashboardComponent extends Component
         $this->produk = !$this->produk;
         $this->pesanan = false;
         $this->pembayaran = false;
+
+        $this->dispatchBrowserEvent('triggerJs');
     }
 
     public function pesanan()
@@ -30,6 +32,8 @@ class DashboardComponent extends Component
         $this->produk = false;
         $this->pesanan = !$this->pesanan;;
         $this->pembayaran = false;
+
+        $this->dispatchBrowserEvent('triggerJs');
     }
 
     public function pembayaran()
@@ -37,5 +41,7 @@ class DashboardComponent extends Component
         $this->produk = false;
         $this->pesanan = false;
         $this->pembayaran = !$this->pembayaran;
+
+        $this->dispatchBrowserEvent('triggerJs');
     }
 }

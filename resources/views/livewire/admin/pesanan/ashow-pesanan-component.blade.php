@@ -1,4 +1,10 @@
 <div class="mt-5">
+    @if (session()->has('sukses'))
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>{{ session('sukses') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
     <table class="table table-dark table-striped table-bordered table-fluid text-white text-center">
         <thead>
@@ -22,27 +28,3 @@
         </tbody>
     </table>
 </div>
-
-@push('style-source')
-    {{-- datatable --}}
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-@endpush
-
-@push('script-source')
-    {{-- datatable --}}
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-@endpush
-
-@push('script')
-    <script>
-        $(document).ready(function() {
-            $('.table').DataTable();
-        });
-
-        document.addEventListener("triggerJs", () => {
-            Livewire.hook('message.processed', () => {
-                $('.table').DataTable();
-            })
-        })
-    </script>
-@endpush

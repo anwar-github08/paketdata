@@ -12,3 +12,7 @@
 # kelola produk diadmin sudah clear
 # membuat kelola gambar bukti pembayaran !! migrasi tabel dan storage link
 # menampilkan gambar di ashowpesanan dan delete image
+# membuat tabel untuk pembayaran !!
+# kelola menu pembayaran
+# datatables tidak berfungsi pada admin
+# tampilkan gambar responsive pada menu pesanan sukses
