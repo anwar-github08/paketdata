@@ -127,8 +127,39 @@ footer {
     font-style: italic;
     border-radius: 10%;
 }
-.card-produk .item img {
+
+/* gambar di card produk dan card transaksi */
+.card-produk .item img,
+.card-transaksi img {
     width: 20px;
+}
+
+/* card transaksi pada komponen produk */
+.card-cara-bertransaksi ul li {
+    list-style: square;
+}
+.card-cara-bertransaksi .second li {
+    list-style: circle;
+}
+.card-transaksi select {
+    border: solid 1px rgb(87, 108, 163);
+    height: 50px;
+}
+.btn-me {
+    border: solid 1px rgb(87, 108, 163);
+    width: 200px;
+    height: 50px;
+    background-color: rgb(87, 108, 163);
+    color: white;
+}
+
+.btn-me:hover {
+    color: rgb(87, 108, 163);
+    background-color: rgb(228, 233, 247);
+}
+.btn-me svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* seukuran hp */
@@ -194,7 +225,25 @@ footer {
     .card-produk .item a {
         line-height: 30px;
     }
-    .card-produk .item img {
+    /* gambar di card produk dan card transaksi */
+    .card-produk .item img,
+    .card-transaksi img {
         width: 12px;
+    }
+
+    /* card transaksi pada komponen produk */
+    .btn-me {
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .btn-me svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .card-transaksi select {
+        height: 40px;
+        font-size: 9px;
     }
 }

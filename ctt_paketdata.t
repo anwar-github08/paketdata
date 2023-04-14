@@ -16,3 +16,7 @@
 # kelola menu pembayaran
 # datatables tidak berfungsi pada admin
 # tampilkan gambar responsive pada menu pesanan sukses
+# buat cara bertransaksi
+# kasih deskripsi produk pada produk komponen
+# buat form transaksi di komponen produk
+form untuk checkout setelah klik lanjutkan

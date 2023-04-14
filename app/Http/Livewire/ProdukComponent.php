@@ -17,6 +17,16 @@ class ProdukComponent extends Component
 
     public $change = false;
 
+    // untuk proses transaksi
+    public $transaksi = false;
+    public $nama_produk;
+    public $kode_produk;
+    public $harga;
+    public $deskripsi;
+    public $multi;
+
+    public $metode_pembayaran = '';
+
     public function mount()
     {
 
@@ -83,5 +93,22 @@ class ProdukComponent extends Component
 
         // change property change untuk mentrigger foreach produkbrands yang ada di komponen, jadi ketika changebrand diklik hasil dari produkbrand adalah array, sedangkan secara deault dia objek
         // $this->change = true;
+    }
+
+    public function proses($nama_produk, $kode_produk, $harga, $deskripsi, $multi)
+    {
+
+        $this->transaksi = true;
+        $this->nama_produk = $nama_produk;
+        $this->kode_produk = $kode_produk;
+        $this->harga = $harga;
+        $this->deskripsi = $deskripsi;
+        $this->multi = $multi;
+    }
+
+    public function batal()
+    {
+        $this->transaksi = false;
+        $this->metode_pembayaran = '';
     }
 }
