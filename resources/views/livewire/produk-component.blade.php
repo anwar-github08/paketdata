@@ -1,78 +1,157 @@
 <div>
+    {{-- ketika proses transaksi --}}
     @if ($transaksi)
-        <div class="card card-transaksi">
-            <div class="card-header"><strong>Transaksi</strong></div>
-            <div class="card-body">
-                <table class="table table-primary table-striped table-bordered">
-                    <tr>
-                        <td><strong>Nama Produk</strong></td>
-                        <td>{{ $nama_produk }} ( {{ $kode_produk }} )</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Harga</strong></td>
-                        <td>{{ number_format($harga) }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Deskripsi</strong></td>
-                        <td>{{ $deskripsi }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Multi</strong></td>
-                        <td>
-                            @if ($multi == true)
-                                <img src="/img/multi.png" alt="multi_on">
+        @if ($checkout)
+            <div class="card card-checkout" id="card-checkout">
+                <div class="card-header"><strong>Selesaikan Pembayaran</strong></div>
+                <div class="card-body">
+
+                    <div class="text-center mb-3">Mohon transfer sesuai data yang tertera</div>
+
+                    <div class="col-md-4 offset-md-4 mb-4">
+                        <table class="table table-primary table-bordered mb-4">
+                            <tr>
+                                <td>Produk</td>
+                                <td>{{ $nama_produk }} ( {{ $kode_produk }} )</td>
+                            </tr>
+                            <tr>
+                                <td>Harga</td>
+                                <td>{{ number_format($harga) }}</td>
+                            </tr>
+                        </table>
+
+                        {{-- image & info bank --}}
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 logo-bank">
+                                <img src="img/{{ $metode_pembayaran }}.png" alt="metede_pembayaran" class="img-fluid"
+                                    width="50">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                @if ($metode_pembayaran == 'BRI')
+                                    <strong>BANK BRI</strong>
+                                @else
+                                    <strong>QRIS</strong>
+                                @endif
+                                <br>
+                                <strong>KHOIRUL ANWAR</strong>
+                            </div>
+                        </div>
+
+                        {{-- no rek & jumlah tf --}}
+                        <div class="mb-4">
+                            @if ($metode_pembayaran == 'BRI')
+                                <label>No Rekening</label>
+                                <div class="d-flex justify-content-between mb-3 info-pembayaran">
+                                    <div class="no_rek"><strong>021354658979</strong></div>
+                                    <div class="salin">Salin</div>
+                                </div>
                             @else
-                                <img src="/img/nomulti.png" alt="multi_off">
+                                <div class="text-center">
+                                    <label>Scan QR Code</label>
+                                    <div class="mb-3 qrcode">
+                                        <img src="img/credit.png" alt="QRIS" width="300"
+                                            class="img-fluid img-thumbnail">
+                                    </div>
+                                </div>
                             @endif
-                        </td>
-                    </tr>
-                </table>
+                            <label>Jumlah Transfer</label>
+                            <div class="d-flex justify-content-between info-pembayaran">
+                                <div class="harga"><strong>{{ number_format($harga) }}</strong></div>
+                                <div class="salin">Salin</div>
+                            </div>
+                        </div>
 
-                {{-- form select metode pembayaran --}}
-                <select wire:model='metode_pembayaran' class="form-control mb-3">
-                    <option value="">-- Pilih Metode Pembayaran --</option>
-                    <option value="BRI">BRI</option>
-                    <option value="QRIS">QRIS</option>
-                </select>
-
-                <div class="d-flex align-items-center justify-content-evenly">
-                    <div>
-                        <button class="btn btn-me" wire:click="batal"
-                            onclick="return confirm('batalkan..?') || event.stopImmediatePropagation()"><svg
-                                xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg> Batal</button>
+                        {{-- tombol --}}
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <a href="#" wire:click='ubah_metode_pembayaran' class="btn"
+                                    onclick="return confirm('Ubah metode pembayaran..?') || event.stopImmediatePropagation()">Ubah
+                                    Metode
+                                    Pembayaran</a>
+                            </div>
+                            <div>
+                                <a href="#" wire:click='sudah_transfer' class="btn">Saya Sudah Transfer</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        @if ($metode_pembayaran == '')
-                            <button class="btn btn-me" wire:click='checkout'
-                                onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"
-                                disabled><svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M5 12l5 5l10 -10"></path>
-                                </svg> Lanjutkan</button>
-                        @else
-                            <button class="btn btn-me" wire:click='checkout'
-                                onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"><svg
-                                    xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check"
+                </div>
+            </div>
+        @else
+            <div class="card card-transaksi">
+                <div class="card-header"><strong>Transaksi</strong></div>
+                <div class="card-body">
+                    <table class="table table-primary table-striped table-bordered">
+                        <tr>
+                            <td><strong>Nama Produk</strong></td>
+                            <td>{{ $nama_produk }} ( {{ $kode_produk }} )</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Harga</strong></td>
+                            <td>{{ number_format($harga) }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deskripsi</strong></td>
+                            <td>{{ $deskripsi }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multi</strong></td>
+                            <td>
+                                @if ($multi == true)
+                                    <img src="/img/multi.png" alt="multi_on">
+                                @else
+                                    <img src="/img/nomulti.png" alt="multi_off">
+                                @endif
+                            </td>
+                        </tr>
+                    </table>
+
+                    {{-- form select metode pembayaran --}}
+                    <select wire:model='metode_pembayaran' class="form-control mb-3">
+                        <option value="">-- Pilih Metode Pembayaran --</option>
+                        <option value="BRI">BRI</option>
+                        <option value="QRIS">QRIS</option>
+                    </select>
+
+                    <div class="d-flex align-items-center justify-content-evenly">
+                        <div>
+                            <button class="btn btn-me" wire:click="batal"
+                                onclick="return confirm('Batalkan..?') || event.stopImmediatePropagation()"><svg
+                                    xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M5 12l5 5l10 -10"></path>
-                                </svg> Lanjutkan</button>
-                        @endif
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg> Batal</button>
+                        </div>
+                        <div>
+                            @if ($metode_pembayaran == '')
+                                <button class="btn btn-me" wire:click='checkout'
+                                    onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"
+                                    disabled><svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M5 12l5 5l10 -10"></path>
+                                    </svg> Lanjutkan</button>
+                            @else
+                                <button class="btn btn-me" wire:click='checkout'
+                                    onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"><svg
+                                        xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M5 12l5 5l10 -10"></path>
+                                    </svg> Lanjutkan</button>
+                            @endif
+                        </div>
                     </div>
+
+
                 </div>
-
-
             </div>
-        </div>
+        @endif
     @else
         <div class="card card-produk">
             <div class="card-header"><strong>Produk Murah & Valid 100%</strong></div>

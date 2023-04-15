@@ -28,7 +28,7 @@
                     </div>
                     <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_qris">QRIS</a></li>
                     <div id="collapse_qris" class="accordion-collapse collapse mb-2 mt-2">
-                        <img src="/img/credit.png" alt="QRIS" class="img-fluid img-thumbnail">
+                        <img src="/img/credit.png" alt="QRIS" class="img-fluid img-thumbnail" width="200">
                     </div>
                 </ul>
                 <br>
@@ -44,7 +44,7 @@
                     <strong>No Telp</strong> yang ingin diisi
                 </li>
                 <li><strong>No Telp</strong> harap ditulis terpisah agar admin mudah dalam memproses</li>
-                <li>Admin akan memverifikasi transfer dan memproses pesanan saat itu juga <i>( jika ada antrian
+                <li>Admin akan memverifikasi transfer dan memproses pesanan saat itu juga <i>( jika ada antrian,
                         admin akan menginformasikan )</i>
                 </li>
                 <li>Pastikan <strong>No Telp</strong> sedang aktif, ada sinyal, dan tidak dalam masa tenggang</li>

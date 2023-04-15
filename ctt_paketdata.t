@@ -19,4 +19,6 @@
 # buat cara bertransaksi
 # kasih deskripsi produk pada produk komponen
 # buat form transaksi di komponen produk
-form untuk checkout setelah klik lanjutkan
+# form untuk checkout setelah klik lanjutkan
+membuat fungsi copy to clipbaord
+membuat form setelah saya sudah transfer

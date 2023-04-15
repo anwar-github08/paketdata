@@ -27,6 +27,9 @@ class ProdukComponent extends Component
 
     public $metode_pembayaran = '';
 
+    // untuk checkout
+    public $checkout = false;
+
     public function mount()
     {
 
@@ -110,5 +113,16 @@ class ProdukComponent extends Component
     {
         $this->transaksi = false;
         $this->metode_pembayaran = '';
+    }
+
+    public function checkout()
+    {
+        $this->checkout = true;
+    }
+
+    // ubah metode pembayaran
+    public function ubah_metode_pembayaran()
+    {
+        $this->checkout = false;
     }
 }
