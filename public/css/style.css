@@ -172,6 +172,10 @@ footer {
     background-color: rgb(87, 108, 163);
     color: white;
 }
+.card-checkout a:hover {
+    background-color: rgb(41, 67, 135);
+    color: white;
+}
 .card-checkout label {
     margin-bottom: 6px;
 }
@@ -184,12 +188,35 @@ footer {
     padding: 8px;
     border-radius: 8px;
 }
-.salin {
+.info-pembayaran input {
+    border: none;
+    background: none;
+    font-weight: bold;
+    color: rgb(87, 108, 163);
+}
+.info-pembayaran input:focus {
+    outline: none;
+}
+.salin button {
     border: solid 1px rgb(207, 146, 2);
     color: rgb(207, 146, 2);
     font-weight: bold;
     border-radius: 8px;
     padding: 3px 5px;
+}
+
+/* ketika diklik salin */
+.copied {
+    content: "Berhasil dicopy";
+    position: absolute;
+    right: 280px;
+    top: 240px;
+    background-color: rgb(41, 67, 135);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: rgb(207, 146, 2);
+    display: none;
 }
 
 /* ================================================================================================ */
@@ -298,5 +325,17 @@ footer {
     /* untuk img qrcode */
     .card-checkout .qrcode img {
         width: 200px;
+    }
+
+    /* ketika tombol salin diklik */
+    .copied {
+        content: "Berhasil dicopy";
+        position: absolute;
+        right: 5px;
+        top: 205px;
+        background-color: rgb(41, 67, 135);
+        padding: 5px 8px;
+        border-radius: 8px;
+        font-size: 9px;
     }
 }

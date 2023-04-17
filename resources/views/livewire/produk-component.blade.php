@@ -42,8 +42,12 @@
                             @if ($metode_pembayaran == 'BRI')
                                 <label>No Rekening</label>
                                 <div class="d-flex justify-content-between mb-3 info-pembayaran">
-                                    <div class="no_rek"><strong>021354658979</strong></div>
-                                    <div class="salin">Salin</div>
+                                    <div class="no_rek">
+                                        <input type="text" value="9234987234724789" id="input-rek" readonly>
+                                    </div>
+                                    <div class="salin">
+                                        <button class="btn-salin-rek">Salin</button>
+                                    </div>
                                 </div>
                             @else
                                 <div class="text-center">
@@ -56,9 +60,14 @@
                             @endif
                             <label>Jumlah Transfer</label>
                             <div class="d-flex justify-content-between info-pembayaran">
-                                <div class="harga"><strong>{{ number_format($harga) }}</strong></div>
-                                <div class="salin">Salin</div>
+                                <div class="harga">
+                                    <input type="text" value="{{ $harga }}" id="input-harga" readonly>
+                                </div>
+                                <div class="salin">
+                                    <button class="btn-salin-harga">Salin</button>
+                                </div>
                             </div>
+                            <div class="copied">Berhasil dicopy</div>
                         </div>
 
                         {{-- tombol --}}
@@ -112,39 +121,42 @@
                         <option value="QRIS">QRIS</option>
                     </select>
 
-                    <div class="d-flex align-items-center justify-content-evenly">
-                        <div>
-                            <button class="btn btn-me" wire:click="batal"
-                                onclick="return confirm('Batalkan..?') || event.stopImmediatePropagation()"><svg
-                                    xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
-                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                </svg> Batal</button>
-                        </div>
-                        <div>
-                            @if ($metode_pembayaran == '')
-                                <button class="btn btn-me" wire:click='checkout'
-                                    onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"
-                                    disabled><svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M5 12l5 5l10 -10"></path>
-                                    </svg> Lanjutkan</button>
-                            @else
-                                <button class="btn btn-me" wire:click='checkout'
-                                    onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"><svg
-                                        xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check"
+                    <div wire:loading.remove>
+                        <div class="d-flex align-items-center justify-content-evenly">
+                            <div>
+                                <button class="btn btn-me" wire:click="batal"
+                                    onclick="return confirm('Batalkan..?') || event.stopImmediatePropagation()"><svg
+                                        xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                         stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M5 12l5 5l10 -10"></path>
-                                    </svg> Lanjutkan</button>
-                            @endif
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg> Batal</button>
+                            </div>
+                            <div>
+                                @if ($metode_pembayaran == '')
+                                    <button class="btn btn-me" wire:click='checkout'
+                                        onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"
+                                        disabled><svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24"
+                                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg> Lanjutkan</button>
+                                @else
+                                    <button class="btn btn-me" wire:click='checkout'
+                                        onclick="return confirm('Lanjutkan..?') || event.stopImmediatePropagation()"><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24"
+                                            stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M5 12l5 5l10 -10"></path>
+                                        </svg> Lanjutkan</button>
+                                @endif
+                            </div>
                         </div>
                     </div>
 
@@ -237,3 +249,42 @@
     @endif
 
 </div>
+
+
+{{-- untuk salin --}}
+@push('script')
+    <script>
+        document.addEventListener("triggerJs", () => {
+            Livewire.hook("message.processed", () => {
+                let salin1 = document.querySelector(".btn-salin-rek");
+                let salin2 = document.querySelector(".btn-salin-harga");
+                if (salin1 !== null) {
+                    salin1.addEventListener("click", function() {
+                        let noRek = document.getElementById('input-rek');
+                        noRek.select();
+                        document.execCommand('copy');
+                        salin1.classList.add('active');
+                        window.getSelection().removeAllRanges();
+                        document.querySelector('.copied').style.display = 'block';
+                        setTimeout(() => {
+                            document.querySelector('.copied').style.display = 'none';
+                        }, 1000);
+                    });
+                }
+                if (salin2 !== null) {
+                    salin2.addEventListener("click", function() {
+                        let harga = document.getElementById('input-harga');
+                        harga.select();
+                        document.execCommand('copy');
+                        salin2.classList.add('active');
+                        window.getSelection().removeAllRanges();
+                        document.querySelector('.copied').style.display = 'block';
+                        setTimeout(() => {
+                            document.querySelector('.copied').style.display = 'none';
+                        }, 1000);
+                    });
+                }
+            });
+        });
+    </script>
+@endpush

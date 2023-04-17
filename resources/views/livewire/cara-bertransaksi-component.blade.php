@@ -6,7 +6,7 @@
             <ul>
                 <li>Pilih produk, kemudian klik <strong>Proses</strong></li>
                 <li>Pilih salah satu dari metode pembayaran yang tersedia</li>
-                <li>Untuk saat ini kami hanya memiliki 2 metode pembayaran, yaitu :</li>
+                <li>Untuk saat ini kami hanya menyediakan 2 metode pembayaran, yaitu :</li>
                 <ul class="second">
                     <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_bri">Rekening
                             Bank BRI</a></li>

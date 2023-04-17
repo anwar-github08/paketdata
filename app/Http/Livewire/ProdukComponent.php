@@ -109,6 +109,7 @@ class ProdukComponent extends Component
         $this->multi = $multi;
     }
 
+    // batal transaksi
     public function batal()
     {
         $this->transaksi = false;
@@ -118,11 +119,15 @@ class ProdukComponent extends Component
     public function checkout()
     {
         $this->checkout = true;
+
+        // untuk trigger js
+        $this->dispatchBrowserEvent('triggerJs');
     }
 
     // ubah metode pembayaran
     public function ubah_metode_pembayaran()
     {
         $this->checkout = false;
+        // $this->dispatchBrowserEvent('triggerJs');
     }
 }

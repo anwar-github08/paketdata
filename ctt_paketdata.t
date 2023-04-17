@@ -20,5 +20,6 @@
 # kasih deskripsi produk pada produk komponen
 # buat form transaksi di komponen produk
 # form untuk checkout setelah klik lanjutkan
-membuat fungsi copy to clipbaord
+# membuat fungsi copy to clipbaord
+mengubah data pembayaran ke otomatis dri dtabase
 membuat form setelah saya sudah transfer
