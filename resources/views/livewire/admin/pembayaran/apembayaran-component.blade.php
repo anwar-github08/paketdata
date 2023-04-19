@@ -8,11 +8,11 @@
                 <div class="col-sm-10">
                     <select wire:model="merchant" id="" class="form-control">
                         <option value="-">-- pilih merchant --</option>
-                        <option value="BRI">BRI</option>
-                        <option value="BCA">BCA</option>
-                        <option value="BNI">BNI</option>
-                        <option value="MANDIRI">MANDIRI</option>
-                        <option value="CIMB NIAGA">CIMB NIAGA</option>
+                        <option value="BANK BRI">BANK BRI</option>
+                        <option value="BANK BCA">BANK BCA</option>
+                        <option value="BANK BNI">BANK BNI</option>
+                        <option value="BANK MANDIRI">BANK MANDIRI</option>
+                        <option value="BANK CIMB NIAGA">BANK CIMB NIAGA</option>
                         <option value="QRIS">QRIS</option>
                     </select>
                 </div>

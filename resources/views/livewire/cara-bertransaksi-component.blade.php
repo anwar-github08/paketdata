@@ -8,27 +8,29 @@
                 <li>Pilih salah satu dari metode pembayaran yang tersedia</li>
                 <li>Untuk saat ini kami hanya menyediakan 2 metode pembayaran, yaitu :</li>
                 <ul class="second">
-                    <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_bri">Rekening
-                            Bank BRI</a></li>
+                    <li><a href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapse_bri">{{ $pembayaran_bank->merchant }}</a></li>
                     <div id="collapse_bri" class="accordion-collapse collapse mb-2 mt-2 col-md-4">
                         <table class="table table-primary table-striped table-bordered">
                             <tr>
                                 <td><strong>Nama Bank</strong></td>
-                                <td><strong>BRI</strong></td>
+                                <td><strong>{{ $pembayaran_bank->merchant }}</strong></td>
                             </tr>
                             <tr>
                                 <td><strong>A.N</strong></td>
-                                <td><strong>Khoirul Anwar</strong></td>
+                                <td><strong>{{ $pembayaran_bank->atas_nama }}</strong></td>
                             </tr>
                             <tr>
                                 <td><strong>No Rek</strong></td>
-                                <td><strong>223456315131313121</strong></td>
+                                <td><strong>{{ $pembayaran_bank->no_rek }}</strong></td>
                             </tr>
                         </table>
                     </div>
-                    <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapse_qris">QRIS</a></li>
+                    <li><a href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapse_qris">{{ $pembayaran_qris->merchant }}</a></li>
                     <div id="collapse_qris" class="accordion-collapse collapse mb-2 mt-2">
-                        <img src="/img/credit.png" alt="QRIS" class="img-fluid img-thumbnail" width="200">
+                        <img src="/storage/image_pembayaran/{{ $pembayaran_qris->image_pembayaran }}" alt="QRIS"
+                            class="img-fluid img-thumbnail" width="200">
                     </div>
                 </ul>
                 <br>

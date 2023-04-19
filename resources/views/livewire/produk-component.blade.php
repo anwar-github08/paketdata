@@ -8,7 +8,7 @@
 
                     <div class="text-center mb-3">Mohon transfer sesuai data yang tertera</div>
 
-                    <div class="col-md-4 offset-md-4 mb-4">
+                    <div class="col-lg-4 offset-lg-4 mb-4">
                         <table class="table table-primary table-bordered mb-4">
                             <tr>
                                 <td>Produk</td>
@@ -27,23 +27,34 @@
                                     width="50">
                             </div>
                             <div class="flex-grow-1 ms-3">
-                                @if ($metode_pembayaran == 'BRI')
-                                    <strong>BANK BRI</strong>
+                                @if ($metode_pembayaran !== 'QRIS')
+                                    <strong>{{ $pembayaran_bank->merchant }}</strong>
+                                    <br>
+                                    <strong>{{ $pembayaran_bank->atas_nama }}</strong>
                                 @else
-                                    <strong>QRIS</strong>
+                                    <strong>{{ $pembayaran_qris->merchant }}</strong>
+                                    <br>
+                                    <strong>{{ $pembayaran_qris->atas_nama }}</strong>
                                 @endif
                                 <br>
-                                <strong>KHOIRUL ANWAR</strong>
                             </div>
                         </div>
 
+                        {{-- alert copied --}}
+                        <div class="alert alert-success fade show copied_rek" role="alert">
+                            <strong>No Rekening </strong>berhasil disalin..!!
+                        </div>
+                        <div class="alert alert-success fade show copied_harga" role="alert">
+                            <strong>Harga </strong>berhasil disalin..!!
+                        </div>
                         {{-- no rek & jumlah tf --}}
                         <div class="mb-4">
-                            @if ($metode_pembayaran == 'BRI')
+                            @if ($metode_pembayaran !== 'QRIS')
                                 <label>No Rekening</label>
-                                <div class="d-flex justify-content-between mb-3 info-pembayaran">
+                                <div class="mb-3 info-pembayaran">
                                     <div class="no_rek">
-                                        <input type="text" value="9234987234724789" id="input-rek" readonly>
+                                        <input type="text" value="{{ $pembayaran_bank->no_rek }}" id="input-rek"
+                                            readonly>
                                     </div>
                                     <div class="salin">
                                         <button class="btn-salin-rek">Salin</button>
@@ -53,21 +64,23 @@
                                 <div class="text-center">
                                     <label>Scan QR Code</label>
                                     <div class="mb-3 qrcode">
-                                        <img src="img/credit.png" alt="QRIS" width="300"
-                                            class="img-fluid img-thumbnail">
+                                        <img src="/storage/image_pembayaran/{{ $pembayaran_qris->image_pembayaran }}"
+                                            alt="QRIS" width="300" class="img-fluid img-thumbnail">
                                     </div>
                                 </div>
                             @endif
                             <label>Jumlah Transfer</label>
-                            <div class="d-flex justify-content-between info-pembayaran">
+                            <div class="info-pembayaran">
                                 <div class="harga">
-                                    <input type="text" value="{{ $harga }}" id="input-harga" readonly>
+                                    <input type="text" value="{{ number_format($harga) }}" id="input-harga"
+                                        readonly>
                                 </div>
                                 <div class="salin">
                                     <button class="btn-salin-harga">Salin</button>
                                 </div>
                             </div>
-                            <div class="copied">Berhasil dicopy</div>
+                            {{-- <div class="copied_rek">Berhasil disalin</div>
+                            <div class="copied_harga">Berhasil disalin</div> --}}
                         </div>
 
                         {{-- tombol --}}
@@ -117,8 +130,9 @@
                     {{-- form select metode pembayaran --}}
                     <select wire:model='metode_pembayaran' class="form-control mb-3">
                         <option value="">-- Pilih Metode Pembayaran --</option>
-                        <option value="BRI">BRI</option>
-                        <option value="QRIS">QRIS</option>
+                        @foreach ($pembayarans as $pembayaran)
+                            <option value="{{ $pembayaran->merchant }}">{{ $pembayaran->merchant }}</option>
+                        @endforeach
                     </select>
 
                     <div wire:loading.remove>
@@ -256,31 +270,31 @@
     <script>
         document.addEventListener("triggerJs", () => {
             Livewire.hook("message.processed", () => {
-                let salin1 = document.querySelector(".btn-salin-rek");
-                let salin2 = document.querySelector(".btn-salin-harga");
-                if (salin1 !== null) {
-                    salin1.addEventListener("click", function() {
+                let salin_rek = document.querySelector(".btn-salin-rek");
+                let salin_harga = document.querySelector(".btn-salin-harga");
+                if (salin_rek !== null) {
+                    salin_rek.addEventListener("click", function() {
                         let noRek = document.getElementById('input-rek');
                         noRek.select();
                         document.execCommand('copy');
-                        salin1.classList.add('active');
+                        salin_rek.classList.add('active');
                         window.getSelection().removeAllRanges();
-                        document.querySelector('.copied').style.display = 'block';
+                        document.querySelector('.copied_rek').style.display = 'block';
                         setTimeout(() => {
-                            document.querySelector('.copied').style.display = 'none';
+                            document.querySelector('.copied_rek').style.display = 'none';
                         }, 1000);
                     });
                 }
-                if (salin2 !== null) {
-                    salin2.addEventListener("click", function() {
+                if (salin_harga !== null) {
+                    salin_harga.addEventListener("click", function() {
                         let harga = document.getElementById('input-harga');
                         harga.select();
                         document.execCommand('copy');
-                        salin2.classList.add('active');
+                        salin_harga.classList.add('active');
                         window.getSelection().removeAllRanges();
-                        document.querySelector('.copied').style.display = 'block';
+                        document.querySelector('.copied_harga').style.display = 'block';
                         setTimeout(() => {
-                            document.querySelector('.copied').style.display = 'none';
+                            document.querySelector('.copied_harga').style.display = 'none';
                         }, 1000);
                     });
                 }

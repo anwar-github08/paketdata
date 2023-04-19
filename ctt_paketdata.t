@@ -21,5 +21,8 @@
 # buat form transaksi di komponen produk
 # form untuk checkout setelah klik lanjutkan
 # membuat fungsi copy to clipbaord
-mengubah data pembayaran ke otomatis dri dtabase
+# mengubah data pembayaran ke otomatis dri dtabase
+# RESPONSIVE PADA CARD CHECKOUT
+# notif berhasil dicopy
 membuat form setelah saya sudah transfer
+membuat tabel untuk menyimpan data transaksi simple, untuk mengetahui historis checkout

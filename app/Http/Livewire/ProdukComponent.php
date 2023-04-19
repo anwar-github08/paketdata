@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Pembayaran;
 use App\Models\Produk;
 use Livewire\Component;
 
@@ -29,6 +30,12 @@ class ProdukComponent extends Component
 
     // untuk checkout
     public $checkout = false;
+
+
+    // untuk menampilkan pembayaran
+    public $pembayarans;
+    public $pembayaran_bank;
+    public $pembayaran_qris;
 
     public function mount()
     {
@@ -60,6 +67,9 @@ class ProdukComponent extends Component
 
     public function render()
     {
+        $this->pembayarans = Pembayaran::all();
+        $this->pembayaran_bank = Pembayaran::where('merchant', $this->metode_pembayaran)->first();
+        $this->pembayaran_qris = Pembayaran::where('merchant', 'QRIS')->first();
         return view('livewire.produk-component');
     }
 
