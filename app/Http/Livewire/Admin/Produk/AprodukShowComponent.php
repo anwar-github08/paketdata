@@ -16,10 +16,10 @@ class AprodukShowComponent extends Component
         return view('livewire.admin.produk.aproduk-show-component');
     }
 
-    // menangkap emit dari userCreate dan emit dari self
-    protected $listeners = ['eTriggerUserShow', 'refresh' => '$refresh'];
+    // menangkap emit dari produkCOmponent
+    protected $listeners = ['eTriggerProdukShow', 'refresh' => '$refresh'];
 
-    public function eTriggerUserShow()
+    public function eTriggerProdukShow()
     {
         session()->flash('sukses', 'Data Tersimpan');
     }

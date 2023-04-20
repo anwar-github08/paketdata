@@ -44,8 +44,8 @@ class ApesananComponent extends Component
             'image' => $imgName
         ]);
 
-        // buat emit untuk trigger user-show
-        $this->emit('eTriggerUserShow');
+        // buat emit untuk trigger pesanan-show
+        $this->emit('eTriggerPesananShow');
         $this->dispatchBrowserEvent('triggerJs');
 
         $this->foto = null;

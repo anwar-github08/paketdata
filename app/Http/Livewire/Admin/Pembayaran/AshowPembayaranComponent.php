@@ -15,10 +15,10 @@ class AshowPembayaranComponent extends Component
         return view('livewire.admin.pembayaran.ashow-pembayaran-component');
     }
 
-    // menangkap emit dari userCreate dan emit dari self
-    protected $listeners = ['eTriggerUserShow', 'refresh' => '$refresh'];
+    // menangkap emit dari pembayaranComponent
+    protected $listeners = ['eTriggerPembayaranShow', 'refresh' => '$refresh'];
 
-    public function eTriggerUserShow()
+    public function eTriggerPembayaranShow()
     {
         session()->flash('sukses', 'Data Tersimpan');
     }

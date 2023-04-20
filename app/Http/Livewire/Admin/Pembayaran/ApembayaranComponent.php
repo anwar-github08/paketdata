@@ -55,8 +55,8 @@ class ApembayaranComponent extends Component
             'image_pembayaran' => $imgName
         ]);
 
-        // buat emit untuk trigger user-show
-        $this->emit('eTriggerUserShow');
+        // buat emit untuk trigger pemabyaran-show
+        $this->emit('eTriggerPembayaranShow');
         $this->dispatchBrowserEvent('triggerJs');
 
         $this->merchant = '';

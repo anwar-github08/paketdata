@@ -24,5 +24,6 @@
 # mengubah data pembayaran ke otomatis dri dtabase
 # RESPONSIVE PADA CARD CHECKOUT
 # notif berhasil dicopy
+ketika sudah sampai proses transaksi, jika user mau pindah menu harus ada alertnya
 membuat form setelah saya sudah transfer
 membuat tabel untuk menyimpan data transaksi simple, untuk mengetahui historis checkout

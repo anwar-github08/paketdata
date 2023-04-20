@@ -23,8 +23,8 @@
                         {{-- image & info bank --}}
                         <div class="d-flex align-items-center mb-3">
                             <div class="flex-shrink-0 logo-bank">
-                                <img src="img/{{ $metode_pembayaran }}.png" alt="metede_pembayaran" class="img-fluid"
-                                    width="50">
+                                <img src="/storage/image_pembayaran/{{ $pembayaran_bank->image_pembayaran }}"
+                                    alt="metede_pembayaran" class="img-fluid" width="50">
                             </div>
                             <div class="flex-grow-1 ms-3">
                                 @if ($metode_pembayaran !== 'QRIS')
@@ -45,7 +45,7 @@
                             <strong>No Rekening </strong>berhasil disalin..!!
                         </div>
                         <div class="alert alert-success fade show copied_harga" role="alert">
-                            <strong>Harga </strong>berhasil disalin..!!
+                            <strong>Jumlah Transfer </strong>berhasil disalin..!!
                         </div>
                         {{-- no rek & jumlah tf --}}
                         <div class="mb-4">
@@ -64,8 +64,8 @@
                                 <div class="text-center">
                                     <label>Scan QR Code</label>
                                     <div class="mb-3 qrcode">
-                                        <img src="/storage/image_pembayaran/{{ $pembayaran_qris->image_pembayaran }}"
-                                            alt="QRIS" width="300" class="img-fluid img-thumbnail">
+                                        <img src="/img/{{ $pembayaran_qris->merchant }}.png" alt="QRIS"
+                                            width="300" class="img-fluid img-thumbnail">
                                     </div>
                                 </div>
                             @endif
@@ -297,6 +297,10 @@
                             document.querySelector('.copied_harga').style.display = 'none';
                         }, 1000);
                     });
+
+                    // window.onbeforeunload = function() {
+                    //     return 'Yakin ingin meninggalkan halaman ini?';
+                    // };
                 }
             });
         });

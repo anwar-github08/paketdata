@@ -46,8 +46,8 @@ class AprodukComponent extends Component
             'multi' => $this->multi
         ]);
 
-        // buat emit untuk trigger user-show
-        $this->emit('eTriggerUserShow');
+        // buat emit untuk trigger produk-show
+        $this->emit('eTriggerProdukShow');
         $this->dispatchBrowserEvent('triggerJs');
 
         $this->nama_produk = '';

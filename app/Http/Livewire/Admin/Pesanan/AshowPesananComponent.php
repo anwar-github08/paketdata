@@ -15,10 +15,10 @@ class AshowPesananComponent extends Component
         return view('livewire.admin.pesanan.ashow-pesanan-component');
     }
 
-    // menangkap emit dari userCreate dan emit dari self
-    protected $listeners = ['eTriggerUserShow', 'refresh' => '$refresh'];
+    // menangkap emit dari pesananComponent
+    protected $listeners = ['eTriggerPesananShow', 'refresh' => '$refresh'];
 
-    public function eTriggerUserShow()
+    public function eTriggerPesananShow()
     {
         session()->flash('sukses', 'Data Tersimpan');
     }
