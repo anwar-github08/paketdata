@@ -1,6 +1,10 @@
 <div>
-    {{-- ketika proses transaksi --}}
+    {{-- ketika proses transaksi atau tombol proses diklik --}}
     @if ($transaksi)
+
+
+
+        {{-- 3. ketika tombol lanjutkan setelah memilih pembayaran --}}
         @if ($checkout)
             <div class="card card-checkout" id="card-checkout">
                 <div class="card-header"><strong>Selesaikan Pembayaran</strong></div>
@@ -92,12 +96,16 @@
                                     Pembayaran</a>
                             </div>
                             <div>
-                                <a href="#" wire:click='sudah_transfer' class="btn">Saya Sudah Transfer</a>
+                                <a href="/sudahTransfer" class="btn">Saya Sudah Transfer</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+            {{-- 2. proses transaksi , pemilihan meotode pembayaran --}}
         @else
             <div class="card card-transaksi">
                 <div class="card-header"><strong>Transaksi</strong></div>
@@ -178,6 +186,10 @@
                 </div>
             </div>
         @endif
+
+
+
+        {{-- 1. ketika tidak ada event apapun, tampilkan produk --}}
     @else
         <div class="card card-produk">
             <div class="card-header"><strong>Produk Murah & Valid 100%</strong></div>

@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/sudahTransfer', function () {
+    return view('sudah_transfer');
+});
+
 
 // rute middleware guest->bisa diakses ketika belum login
 Route::middleware('guest')->group(function () {

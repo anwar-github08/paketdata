@@ -235,6 +235,17 @@ footer {
     display: none;
 }
 
+/* btn-ungu */
+.card .btn-ungu {
+    font-size: 14px;
+    border: solid 1px rgb(87, 108, 163);
+    background-color: rgb(87, 108, 163);
+    color: white;
+}
+.card .btn-ungu:hover {
+    background-color: rgb(41, 67, 135);
+    color: white;
+}
 /* ================================================================================================ */
 /* seukuran hp */
 @media only screen and (max-width: 768px) {
@@ -366,4 +377,9 @@ footer {
         border-radius: 8px;
         font-size: 9px;
     } */
+
+    /* btn-ungu */
+    .card .btn-ungu {
+        font-size: 10px;
+    }
 }
