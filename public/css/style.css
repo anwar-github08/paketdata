@@ -207,6 +207,11 @@ footer {
     padding: 4px;
 }
 
+/* card about me */
+.card-about-me ul li {
+    list-style: circle;
+}
+
 /* ketika diklik salin rek*/
 .copied_rek {
     /* position: absolute;
