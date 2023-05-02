@@ -4,8 +4,11 @@
         <div class="card-header"><strong>Sudah Transfer</strong></div>
         <div class="card-body">
             <div class="text-center">
-                <div class="mb-2">
+                <div class="mb-3">
                     Mohon kirim bukti pembayaran agar admin dapat memproses pesananmu
+                </div>
+                <div class="airplane mb-3">
+                    <img src="/img/airplane.gif" alt="" width="100" class="img-circle">
                 </div>
                 <div class="mb-4">
                     <strong>Kirim Bukti Pembayaran</strong>

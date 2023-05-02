@@ -26,5 +26,8 @@
 # notif berhasil dicopy
 # membuat form setelah saya sudah transfer
 # membuat isi about me
+# upload hosting
+input produk & bukti pesanan
+qris
 ketika sudah sampai proses transaksi, jika user mau pindah menu harus ada alertnya
 membuat tabel untuk menyimpan data transaksi simple, untuk mengetahui historis checkout

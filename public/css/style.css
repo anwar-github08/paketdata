@@ -240,6 +240,11 @@ footer {
     display: none;
 }
 
+/* card sudah transfer */
+.card-sudah-transfer img {
+    border-radius: 50%;
+}
+
 /* btn-ungu */
 .card .btn-ungu {
     font-size: 14px;

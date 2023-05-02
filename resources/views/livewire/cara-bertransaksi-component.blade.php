@@ -39,7 +39,8 @@
                 <li>Kirim bukti pembayaran kepada admin <i>( via <a href="https://wa.me/6281330406408"
                             onclick="return confirm('Hubungi admin via whatsapp..?')" target="blank">Whatsapp</a> atau
                         <a href="https://t.me/playmakeranwar08"
-                            onclick="return confirm('Hubungi admin via telegram..?')" target="blank">Telegram</a> )</i>
+                            onclick="return confirm('Hubungi admin via telegram..?')" target="blank">Telegram</a> ),
+                    </i>
                     sertakan
                     juga <strong>Nama
                         Produk</strong> dan

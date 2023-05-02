@@ -12,15 +12,15 @@
             <p>playmakeranwar08@gmail.com</p>
             <hr>
             <p>
-                Sistem ini dibuat karena admin pernah berjualan di sebuah ecommerce atau toko online terbaik di
+                Sistem ini dibuat karena admin pernah berjualan di salah satu ecommerce atau toko online terbaik di
                 Indonesia.
                 <br>
                 Banyak pembeli yang berkunjung dan melakukan transaksi,
-                setelah beberapa transaksi terselesaikan, admin mulai dikenakan pajak dari pihak ecommerce, untuk
-                maka dari itu, admin harus menaikkan harga produk.
+                setelah beberapa transaksi terselesaikan, admin mulai dikenakan pajak dari pihak ecommerce, maka dari
+                itu, admin harus menaikkan harga produk.
                 <br>
                 Ketika harga produk mulai dinaikkan, pembeli jarang yang mengunjungi toko untuk melakukan transaksi.
-                <br><br>
+                <br>
                 Itulah alasan kenapa sistem ini dibuat.
             </p>
             <p><i>KEKURANGAN</i></p>
