@@ -30,17 +30,21 @@
                     diinginkan
                 </li>
                 <li>
-                    Metode pembayaran hanya melalui BANK BRI & QRIS
+                    {{-- Metode pembayaran hanya melalui BANK BRI & QRIS --}}
+                    Metode pembayaran hanya melalui BANK BRI
                 </li>
             </ul>
             <p><i>KELEBIHAN</i></p>
             <ul>
+                <li>Harga produk murah, produk valid 100%</li>
                 <li>Pembeli langsung berkomunikasi dengan admin untuk bertanya, melakukan transaksi, komplain produk,
                     atau lainnya</li>
                 <li>Jika pembeli
-                    transfer sesama BANK BRI atau pembeli transfer dengan scan QRIS, maka tidak ada
+                    transfer sesama BANK BRI, maka tidak ada
                     biaya admin sama sekali</li>
-                <li>Harga produk murah, produk valid 100%</li>
+                {{-- <li>Jika pembeli
+                        transfer sesama BANK BRI atau pembeli transfer dengan scan QRIS, maka tidak ada
+                        biaya admin sama sekali</li> --}}
                 <li>Bisa komplain jika ada masalah dengan produk yang sudah dibeli <i>( Batas komplain max 24jam setelah
                         pesanan sukses )</i></li>
             </ul>

@@ -31,10 +31,14 @@
                     <td>{{ number_format($produk->harga) }}</td>
                     <td>{{ $produk->deskripsi }}</td>
                     <td>{{ $produk->multi }}</td>
-                    <td><button class="btn btn-danger btn-sm"
+                    <td>
+                        <button class="btn btn-danger btn-sm"
                             onclick="return confirm('hapus..?') ||
                             event.stopImmediatePropagation()"
-                            wire:click="deleteProduk({{ $produk->id }})">Hapus</button></td>
+                            wire:click="deleteProduk({{ $produk->id }})">Hapus</button>
+                        <button class="btn btn-warning btn-sm"
+                            wire:click="$emit('eUpdateProduk',{{ $produk->id }})">Ubah</button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

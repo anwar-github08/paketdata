@@ -6,7 +6,7 @@
             <ul>
                 <li>Pilih produk, kemudian klik <strong>Proses</strong></li>
                 <li>Pilih salah satu dari metode pembayaran yang tersedia</li>
-                <li>Untuk saat ini kami hanya menyediakan 2 metode pembayaran, yaitu :</li>
+                <li>Untuk saat ini kami hanya menyediakan metode pembayaran, yaitu :</li>
                 <ul class="second">
                     <li><a href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapse_bri">{{ $pembayaran_bank->merchant }}</a></li>
@@ -26,12 +26,12 @@
                             </tr>
                         </table>
                     </div>
-                    <li><a href="#" data-bs-toggle="collapse"
+                    {{-- <li><a href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapse_qris">{{ $pembayaran_qris->merchant }}</a></li>
                     <div id="collapse_qris" class="accordion-collapse collapse mb-2 mt-2">
                         <img src="/storage/image_pembayaran/{{ $pembayaran_qris->image_pembayaran }}" alt="QRIS"
                             class="img-fluid img-thumbnail" width="200">
-                    </div>
+                    </div> --}}
                 </ul>
                 <br>
                 <li>Setelah pilih metode pembayaran, klik <strong>Lanjutkan</strong></li>

@@ -11,11 +11,30 @@ class DashboardComponent extends Component
     public $pesanan = false;
     public $pembayaran = false;
 
+    public $updateProduk = false;
+    public $idProduk;
+
 
     public function render()
     {
         return view('livewire.admin.dashboard-component');
     }
+
+    protected $listeners = ['eUpdateProduk', 'eBatalUpdate'];
+
+    // menangkap emit dari ubahproduk di showprodukcomponent
+    public function eUpdateProduk($post)
+    {
+        $this->idProduk = $post;
+        $this->updateProduk = true;
+    }
+    // emit batal dari updateProduk,
+    public function eBatalUpdate()
+    {
+        $this->updateProduk = false;
+    }
+
+
 
     public function produk()
     {

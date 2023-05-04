@@ -88,13 +88,13 @@
                         </div>
 
                         {{-- tombol --}}
-                        <div class="d-flex justify-content-between">
-                            <div>
+                        <div class="text-center">
+                            {{-- <div>
                                 <a href="#" wire:click='ubah_metode_pembayaran' class="btn"
                                     onclick="return confirm('Ubah metode pembayaran..?') || event.stopImmediatePropagation()">Ubah
                                     Metode
                                     Pembayaran</a>
-                            </div>
+                            </div> --}}
                             <div>
                                 <a href="/sudahTransfer" class="btn">Saya Sudah Transfer</a>
                             </div>

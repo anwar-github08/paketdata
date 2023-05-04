@@ -5,7 +5,11 @@
     <div class="mb-4"></div>
 
     @if ($produk)
-        @livewire('admin.produk.aproduk-component')
+        @if ($updateProduk)
+            @livewire('admin.produk.aproduk-update-component', ['idProduk' => $idProduk, ''], key(time()))
+        @else
+            @livewire('admin.produk.aproduk-component')
+        @endif
         @livewire('admin.produk.aproduk-show-component')
     @elseif($pesanan)
         @livewire('admin.pesanan.apesanan-component')
