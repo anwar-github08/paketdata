@@ -192,7 +192,7 @@
         {{-- 1. ketika tidak ada event apapun, tampilkan produk --}}
     @else
         <div class="card card-produk">
-            <div class="card-header"><strong>Produk Murah & Valid 100%</strong></div>
+            <div class="card-header"><strong>Produk Valid 100%</strong></div>
             <div class="card-body">
                 <div class="item mb-3">
                     @foreach ($kategoris as $kategori)
